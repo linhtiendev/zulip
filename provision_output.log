@@ -1,0 +1,579 @@
+No changes to apt dependencies, so skipping apt operations.
++ sudo -H -- env http_proxy= https_proxy= no_proxy= scripts/lib/install-node
++ sudo -- env http_proxy= https_proxy= no_proxy= tools/setup/install-shellcheck
++ sudo -- env http_proxy= https_proxy= no_proxy= tools/setup/install-shfmt
++ sudo -- env http_proxy= https_proxy= no_proxy= tools/setup/install-transifex-cli
++ sudo -- env http_proxy= https_proxy= no_proxy= tools/setup/install-tusd
++ sudo -- rm -rf /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv
++ sudo -- mkdir -p /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv
++ sudo -- virtualenv -p python3 --no-download /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv
+created virtual environment CPython3.12.3.final.0-64 in 70ms
+  creator CPython3Posix(dest=/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv, clear=False, no_vcs_ignore=False, global=False)
+  seeder FromAppData(download=False, pip=bundle, via=copy, app_data_dir=/root/.local/share/virtualenv)
+    added seed packages: pip==24.0
+  activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
++ sudo -- chown -R 1000:1000 /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv
++ /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/bin/pip install --force-reinstall --require-hashes -r /mnt/e/zulip/requirements/pip.txt
+DEPRECATION: https://github.com/zulip/pip/archive/50e61dcc78d0da8a041e4fecc566f40b2b0604df.zip#egg=pip==20.3.4+git contains an egg fragment with a non-PEP 508 name pip 25.0 will enforce this behaviour change. A possible replacement is to use the req @ url syntax, and remove the egg fragment. Discussion can be found at https://github.com/pypa/pip/issues/11617
+Collecting pip==20.3.4+git (from -r /mnt/e/zulip/requirements/pip.txt (line 16))
+  Using cached https://github.com/zulip/pip/archive/50e61dcc78d0da8a041e4fecc566f40b2b0604df.zip (9.2 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+  WARNING: Requested pip==20.3.4+git from https://github.com/zulip/pip/archive/50e61dcc78d0da8a041e4fecc566f40b2b0604df.zip#egg=pip==20.3.4+git (from -r /mnt/e/zulip/requirements/pip.txt (line 16)), but installing version 20.3.4
+Collecting wheel==0.45.0 (from -r /mnt/e/zulip/requirements/pip.txt (line 10))
+  Using cached wheel-0.45.0-py3-none-any.whl (72 kB)
+Collecting setuptools==71.0.0 (from -r /mnt/e/zulip/requirements/pip.txt (line 19))
+  Using cached setuptools-71.0.0-py3-none-any.whl (908 kB)
+Building wheels for collected packages: pip
+  Building wheel for pip (pyproject.toml): started
+  Building wheel for pip (pyproject.toml): finished with status 'done'
+  Created wheel for pip: filename=pip-20.3.4-py2.py3-none-any.whl size=1526854 sha256=9f97ea6475fcbda61feb415d0ca770a864268626c7511d81374c3ffe7dc5bc40
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9gmp_4i1/wheels/78/44/df/4437aa7ce02a9a4a664bf38a9478f5ce0c960cf87819eaf3d6
+Successfully built pip
+Installing collected packages: wheel, setuptools, pip
+  Attempting uninstall: pip
+    Found existing installation: pip 24.0
+    Uninstalling pip-24.0:
+      Successfully uninstalled pip-24.0
+Successfully installed pip-20.3.4 setuptools-71.0.0 wheel-0.45.0
++ /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/bin/pip install --use-deprecated=legacy-resolver --no-deps --require-hashes -r /mnt/e/zulip/requirements/dev.txt
+Collecting aioapns==3.3.1
+  Using cached aioapns-3.3.1-py3-none-any.whl (14 kB)
+Collecting aiohappyeyeballs==2.4.3
+  Using cached aiohappyeyeballs-2.4.3-py3-none-any.whl (14 kB)
+Collecting aiohttp==3.11.2
+  Using cached aiohttp-3.11.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.7 MB)
+Collecting aiohttp-retry==2.8.3
+  Using cached aiohttp_retry-2.8.3-py3-none-any.whl (9.8 kB)
+Collecting aiosignal==1.3.1
+  Using cached aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+Collecting alabaster==1.0.0
+  Using cached alabaster-1.0.0-py3-none-any.whl (13 kB)
+Collecting annotated-types==0.7.0
+  Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Collecting argon2-cffi==23.1.0
+  Using cached argon2_cffi-23.1.0-py3-none-any.whl (15 kB)
+Collecting argon2-cffi-bindings==21.2.0
+  Using cached argon2_cffi_bindings-21.2.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (86 kB)
+Collecting arrow==1.3.0
+  Using cached arrow-1.3.0-py3-none-any.whl (66 kB)
+Collecting asgiref==3.7.2
+  Using cached asgiref-3.7.2-py3-none-any.whl (24 kB)
+Collecting asttokens==2.4.1
+  Using cached asttokens-2.4.1-py2.py3-none-any.whl (27 kB)
+Collecting async-timeout==5.0.1
+  Using cached async_timeout-5.0.1-py3-none-any.whl (6.2 kB)
+Collecting attrs==24.2.0
+  Using cached attrs-24.2.0-py3-none-any.whl (63 kB)
+Collecting automat==24.8.1
+  Using cached Automat-24.8.1-py3-none-any.whl (42 kB)
+Collecting babel==2.16.0
+  Using cached babel-2.16.0-py3-none-any.whl (9.6 MB)
+Collecting backoff==2.2.1
+  Using cached backoff-2.2.1-py3-none-any.whl (15 kB)
+Collecting beautifulsoup4==4.12.3
+  Using cached beautifulsoup4-4.12.3-py3-none-any.whl (147 kB)
+Collecting black==24.10.0
+  Using cached black-24.10.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (1.8 MB)
+Collecting boltons==21.0.0
+  Using cached boltons-21.0.0-py2.py3-none-any.whl (193 kB)
+Collecting boto3==1.35.64
+  Using cached boto3-1.35.64-py3-none-any.whl (139 kB)
+Collecting boto3-stubs[s3,ses,sns,sqs]==1.35.64
+  Using cached boto3_stubs-1.35.64-py3-none-any.whl (62 kB)
+Collecting botocore==1.35.64
+  Using cached botocore-1.35.64-py3-none-any.whl (12.9 MB)
+Collecting botocore-stubs==1.35.64
+  Using cached botocore_stubs-1.35.64-py3-none-any.whl (60 kB)
+Collecting bracex==2.5.post1
+  Using cached bracex-2.5.post1-py3-none-any.whl (11 kB)
+Collecting cachecontrol==0.14.1
+  Using cached cachecontrol-0.14.1-py3-none-any.whl (22 kB)
+Collecting cachetools==5.5.0
+  Using cached cachetools-5.5.0-py3-none-any.whl (9.5 kB)
+Collecting certifi==2024.8.30
+  Downloading certifi-2024.8.30-py3-none-any.whl (167 kB)
+Collecting cffi==1.17.1
+  Downloading cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (479 kB)
+Collecting chardet==5.2.0
+  Downloading chardet-5.2.0-py3-none-any.whl (199 kB)
+Collecting charset-normalizer==3.4.0
+  Downloading charset_normalizer-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (143 kB)
+Collecting circuitbreaker==2.0.0
+  Downloading circuitbreaker-2.0.0-py2.py3-none-any.whl (7.6 kB)
+Collecting click==8.1.7
+  Downloading click-8.1.7-py3-none-any.whl (97 kB)
+Collecting click-option-group==0.5.6
+  Downloading click_option_group-0.5.6-py3-none-any.whl (12 kB)
+Collecting codespell==2.3.0
+  Downloading codespell-2.3.0-py3-none-any.whl (329 kB)
+Collecting colorama==0.4.6
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting constantly==23.10.4
+  Downloading constantly-23.10.4-py3-none-any.whl (13 kB)
+Collecting coverage==7.6.7
+  Downloading coverage-7.6.7-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (239 kB)
+Collecting cryptography==43.0.3
+  Downloading cryptography-43.0.3-cp39-abi3-manylinux_2_28_x86_64.whl (4.0 MB)
+Collecting css-inline==0.14.3
+  Downloading css_inline-0.14.3-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.9 MB)
+Collecting cssselect==1.2.0
+  Downloading cssselect-1.2.0-py2.py3-none-any.whl (18 kB)
+Collecting dataclasses-json==0.5.7
+  Downloading dataclasses_json-0.5.7-py3-none-any.whl (25 kB)
+Collecting decorator==5.1.1
+  Downloading decorator-5.1.1-py3-none-any.whl (9.1 kB)
+Collecting defusedxml==0.7.1
+  Downloading defusedxml-0.7.1-py2.py3-none-any.whl (25 kB)
+Collecting disposable-email-domains==0.0.108
+  Downloading disposable_email_domains-0.0.108-py2.py3-none-any.whl (25 kB)
+Collecting distro==1.9.0
+  Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+Collecting django[argon2]==5.0.9
+  Downloading Django-5.0.9-py3-none-any.whl (8.2 MB)
+Collecting django-auth-ldap==5.1.0
+  Downloading django_auth_ldap-5.1.0-py3-none-any.whl (20 kB)
+Collecting django-bitfield==2.2.0
+  Downloading django-bitfield-2.2.0.tar.gz (17 kB)
+Collecting django-bmemcached==0.3.0
+  Downloading django-bmemcached-0.3.0.tar.gz (3.0 kB)
+Collecting django-cte==1.3.3
+  Downloading django_cte-1.3.3-py2.py3-none-any.whl (11 kB)
+Collecting django-formtools==2.5.1
+  Downloading django_formtools-2.5.1-py3-none-any.whl (170 kB)
+Collecting django-otp==1.5.4
+  Downloading django_otp-1.5.4-py3-none-any.whl (82 kB)
+Collecting django-phonenumber-field==8.0.0
+  Downloading django_phonenumber_field-8.0.0-py3-none-any.whl (66 kB)
+Collecting django-scim2==0.19.1
+  Downloading django_scim2-0.19.1-py3-none-any.whl (32 kB)
+Collecting django-stubs==5.1.1
+  Downloading django_stubs-5.1.1-py3-none-any.whl (470 kB)
+Collecting django-stubs-ext==5.1.1
+  Downloading django_stubs_ext-5.1.1-py3-none-any.whl (9.0 kB)
+Collecting django-two-factor-auth[call,phonenumberslite,sms]==1.17.0
+  Downloading django_two_factor_auth-1.17.0-py3-none-any.whl (298 kB)
+Collecting dnspython==2.7.0
+  Downloading dnspython-2.7.0-py3-none-any.whl (313 kB)
+Collecting docutils==0.21.2
+  Downloading docutils-0.21.2-py3-none-any.whl (587 kB)
+Collecting exceptiongroup==1.2.2
+  Downloading exceptiongroup-1.2.2-py3-none-any.whl (16 kB)
+Collecting executing==2.1.0
+  Downloading executing-2.1.0-py2.py3-none-any.whl (25 kB)
+Collecting face==24.0.0
+  Downloading face-24.0.0-py3-none-any.whl (54 kB)
+Collecting fakeldap==0.6.6
+  Downloading fakeldap-0.6.6-py2.py3-none-any.whl (8.3 kB)
+Collecting filelock==3.16.1
+  Downloading filelock-3.16.1-py3-none-any.whl (16 kB)
+Collecting firebase-admin==6.6.0
+  Downloading firebase_admin-6.6.0-py3-none-any.whl (127 kB)
+Collecting frozenlist==1.5.0
+  Downloading frozenlist-1.5.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (283 kB)
+Collecting future==1.0.0
+  Downloading future-1.0.0-py3-none-any.whl (491 kB)
+Collecting gitlint-core==0.19.1
+  Downloading gitlint_core-0.19.1-py3-none-any.whl (44 kB)
+Collecting glom==22.1.0
+  Downloading glom-22.1.0-py2.py3-none-any.whl (100 kB)
+Collecting google-api-core[grpc]==2.23.0
+  Downloading google_api_core-2.23.0-py3-none-any.whl (156 kB)
+Collecting google-api-python-client==2.153.0
+  Downloading google_api_python_client-2.153.0-py2.py3-none-any.whl (12.6 MB)
+Collecting google-auth==2.36.0
+  Downloading google_auth-2.36.0-py2.py3-none-any.whl (209 kB)
+Collecting google-auth-httplib2==0.2.0
+  Downloading google_auth_httplib2-0.2.0-py2.py3-none-any.whl (9.3 kB)
+Collecting google-cloud-core==2.4.1
+  Downloading google_cloud_core-2.4.1-py2.py3-none-any.whl (29 kB)
+Collecting google-cloud-firestore==2.19.0
+  Downloading google_cloud_firestore-2.19.0-py2.py3-none-any.whl (336 kB)
+Collecting google-cloud-storage==2.18.2
+  Downloading google_cloud_storage-2.18.2-py2.py3-none-any.whl (130 kB)
+Collecting google-crc32c==1.6.0
+  Downloading google_crc32c-1.6.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (32 kB)
+Collecting google-re2==1.1.20240702
+  Downloading google_re2-1.1.20240702-1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (546 kB)
+Collecting google-resumable-media==2.7.2
+  Downloading google_resumable_media-2.7.2-py2.py3-none-any.whl (81 kB)
+Collecting googleapis-common-protos==1.66.0
+  Downloading googleapis_common_protos-1.66.0-py2.py3-none-any.whl (221 kB)
+Collecting greenlet==3.1.1
+  Downloading greenlet-3.1.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (613 kB)
+Collecting grpcio==1.68.0
+  Downloading grpcio-1.68.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
+Collecting grpcio-status==1.68.0
+  Downloading grpcio_status-1.68.0-py3-none-any.whl (14 kB)
+Collecting h2==4.1.0
+  Downloading h2-4.1.0-py3-none-any.whl (57 kB)
+Collecting hpack==4.0.0
+  Downloading hpack-4.0.0-py3-none-any.whl (32 kB)
+Collecting html2text==2024.2.26
+  Downloading html2text-2024.2.26.tar.gz (56 kB)
+Collecting html5lib==1.1
+  Downloading html5lib-1.1-py2.py3-none-any.whl (112 kB)
+Collecting httplib2==0.22.0
+  Downloading httplib2-0.22.0-py3-none-any.whl (96 kB)
+Collecting hyperframe==6.0.1
+  Downloading hyperframe-6.0.1-py3-none-any.whl (12 kB)
+Collecting hyperlink==21.0.0
+  Downloading hyperlink-21.0.0-py2.py3-none-any.whl (74 kB)
+Collecting idna==3.10
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+Collecting imagesize==1.4.1
+  Downloading imagesize-1.4.1-py2.py3-none-any.whl (8.8 kB)
+Collecting incremental==24.7.2
+  Downloading incremental-24.7.2-py3-none-any.whl (20 kB)
+Collecting ipython==8.29.0
+  Downloading ipython-8.29.0-py3-none-any.whl (819 kB)
+Collecting isodate==0.7.2
+  Downloading isodate-0.7.2-py3-none-any.whl (22 kB)
+Collecting itemadapter==0.9.0
+  Downloading itemadapter-0.9.0-py3-none-any.whl (11 kB)
+Collecting itemloaders==1.3.2
+  Downloading itemloaders-1.3.2-py3-none-any.whl (12 kB)
+Collecting jedi==0.19.2
+  Downloading jedi-0.19.2-py2.py3-none-any.whl (1.6 MB)
+Collecting jinja2==3.1.4
+  Downloading jinja2-3.1.4-py3-none-any.whl (133 kB)
+Collecting jmespath==1.0.1
+  Downloading jmespath-1.0.1-py3-none-any.whl (20 kB)
+Collecting joblib==1.4.2
+  Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+Collecting jsonpickle==4.0.0
+  Downloading jsonpickle-4.0.0-py3-none-any.whl (46 kB)
+Collecting jsonref==1.1.0
+  Downloading jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+Collecting jsonschema==4.23.0
+  Downloading jsonschema-4.23.0-py3-none-any.whl (88 kB)
+Collecting jsonschema-path==0.3.3
+  Downloading jsonschema_path-0.3.3-py3-none-any.whl (14 kB)
+Collecting jsonschema-specifications==2023.12.1
+  Downloading jsonschema_specifications-2023.12.1-py3-none-any.whl (18 kB)
+Collecting jsx-lexer==2.0.1
+  Downloading jsx_lexer-2.0.1-py2.py3-none-any.whl (4.1 kB)
+Collecting lazy-object-proxy==1.10.0
+  Downloading lazy_object_proxy-1.10.0-cp312-cp312-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (72 kB)
+Collecting libcst==1.5.1
+  Downloading libcst-1.5.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
+Collecting line-profiler==4.1.3
+  Downloading line_profiler-4.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (720 kB)
+Collecting lxml==5.3.0
+  Downloading lxml-5.3.0.tar.gz (3.7 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Collecting lxml-stubs==0.5.1
+  Downloading lxml_stubs-0.5.1-py3-none-any.whl (13 kB)
+Collecting markdown==3.7
+  Downloading Markdown-3.7-py3-none-any.whl (106 kB)
+Collecting markdown-it-py==3.0.0
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+Collecting markupsafe==3.0.2
+  Downloading MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)
+Collecting marshmallow==3.23.1
+  Downloading marshmallow-3.23.1-py3-none-any.whl (49 kB)
+Collecting marshmallow-enum==1.5.1
+  Downloading marshmallow_enum-1.5.1-py2.py3-none-any.whl (4.2 kB)
+Collecting matplotlib-inline==0.1.7
+  Downloading matplotlib_inline-0.1.7-py3-none-any.whl (9.9 kB)
+Collecting mdit-py-plugins==0.4.2
+  Downloading mdit_py_plugins-0.4.2-py3-none-any.whl (55 kB)
+Collecting mdurl==0.1.2
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting more-itertools==10.5.0
+  Downloading more_itertools-10.5.0-py3-none-any.whl (60 kB)
+Collecting moto[s3]==5.0.21
+  Downloading moto-5.0.21-py3-none-any.whl (4.4 MB)
+Collecting msgpack==1.1.0
+  Downloading msgpack-1.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (401 kB)
+Collecting multidict==6.1.0
+  Downloading multidict-6.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+Collecting mypy[faster-cache]==1.13.0
+  Downloading mypy-1.13.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (12.6 MB)
+Collecting mypy-boto3-s3==1.35.61
+  Downloading mypy_boto3_s3-1.35.61-py3-none-any.whl (75 kB)
+Collecting mypy-boto3-ses==1.35.3
+  Downloading mypy_boto3_ses-1.35.3-py3-none-any.whl (39 kB)
+Collecting mypy-boto3-sns==1.35.0
+  Downloading mypy_boto3_sns-1.35.0-py3-none-any.whl (38 kB)
+Collecting mypy-boto3-sqs==1.35.0
+  Downloading mypy_boto3_sqs-1.35.0-py3-none-any.whl (33 kB)
+Collecting mypy-extensions==1.0.0
+  Downloading mypy_extensions-1.0.0-py3-none-any.whl (4.7 kB)
+Collecting myst-parser==4.0.0
+  Downloading myst_parser-4.0.0-py3-none-any.whl (84 kB)
+Collecting natsort==8.4.0
+  Downloading natsort-8.4.0-py3-none-any.whl (38 kB)
+Collecting oauthlib==3.2.2
+  Downloading oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Collecting openapi-core==0.19.4
+  Downloading openapi_core-0.19.4-py3-none-any.whl (103 kB)
+Collecting openapi-schema-validator==0.6.2
+  Downloading openapi_schema_validator-0.6.2-py3-none-any.whl (8.8 kB)
+Collecting openapi-spec-validator==0.7.1
+  Downloading openapi_spec_validator-0.7.1-py3-none-any.whl (38 kB)
+Collecting orjson==3.10.11
+  Downloading orjson-3.10.11-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (142 kB)
+Collecting packaging==24.2
+  Downloading packaging-24.2-py3-none-any.whl (65 kB)
+Collecting parse==1.20.2
+  Downloading parse-1.20.2-py2.py3-none-any.whl (20 kB)
+Collecting parsel==1.9.1
+  Downloading parsel-1.9.1-py2.py3-none-any.whl (17 kB)
+Collecting parso==0.8.4
+  Downloading parso-0.8.4-py2.py3-none-any.whl (103 kB)
+Collecting pathable==0.4.3
+  Downloading pathable-0.4.3-py3-none-any.whl (9.6 kB)
+Collecting pathspec==0.12.1
+  Downloading pathspec-0.12.1-py3-none-any.whl (31 kB)
+Collecting peewee==3.17.8
+  Downloading peewee-3.17.8.tar.gz (948 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Collecting pep517==0.13.1
+  Downloading pep517-0.13.1-py3-none-any.whl (19 kB)
+Collecting pexpect==4.9.0
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Collecting phonenumberslite==8.13.50
+  Downloading phonenumberslite-8.13.50-py2.py3-none-any.whl (471 kB)
+Collecting pika==1.3.2
+  Downloading pika-1.3.2-py3-none-any.whl (155 kB)
+Collecting pip-tools==6.2.0
+  Downloading pip_tools-6.2.0-py3-none-any.whl (46 kB)
+Collecting platformdirs==4.3.6
+  Downloading platformdirs-4.3.6-py3-none-any.whl (18 kB)
+Collecting polib==1.2.0
+  Downloading polib-1.2.0-py2.py3-none-any.whl (20 kB)
+Collecting prometheus-client==0.21.0
+  Downloading prometheus_client-0.21.0-py3-none-any.whl (54 kB)
+Collecting prompt-toolkit==3.0.48
+  Downloading prompt_toolkit-3.0.48-py3-none-any.whl (386 kB)
+Collecting propcache==0.2.0
+  Downloading propcache-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (248 kB)
+Collecting protego==0.3.1
+  Downloading Protego-0.3.1-py2.py3-none-any.whl (8.5 kB)
+Collecting proto-plus==1.25.0
+  Downloading proto_plus-1.25.0-py3-none-any.whl (50 kB)
+Collecting protobuf==5.28.3
+  Downloading protobuf-5.28.3-cp38-abi3-manylinux2014_x86_64.whl (316 kB)
+Collecting psutil==6.1.0
+  Downloading psutil-6.1.0-cp36-abi3-manylinux_2_12_x86_64.manylinux2010_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (287 kB)
+Collecting psycopg2==2.9.10
+  Downloading psycopg2-2.9.10.tar.gz (385 kB)
+Collecting ptyprocess==0.7.0
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Collecting pure-eval==0.2.3
+  Downloading pure_eval-0.2.3-py3-none-any.whl (11 kB)
+Collecting py-partiql-parser==0.5.6
+  Downloading py_partiql_parser-0.5.6-py2.py3-none-any.whl (23 kB)
+Collecting py3dns==4.0.2
+  Downloading py3dns-4.0.2-py3-none-any.whl (29 kB)
+Collecting pyahocorasick==2.1.0
+  Downloading pyahocorasick-2.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (119 kB)
+Collecting pyasn1==0.6.1
+  Downloading pyasn1-0.6.1-py3-none-any.whl (83 kB)
+Collecting pyasn1-modules==0.4.1
+  Downloading pyasn1_modules-0.4.1-py3-none-any.whl (181 kB)
+Collecting pyasyncore==1.0.4
+  Downloading pyasyncore-1.0.4-py3-none-any.whl (10 kB)
+Collecting pycparser==2.22
+  Downloading pycparser-2.22-py3-none-any.whl (117 kB)
+Collecting pydantic==2.9.2
+  Downloading pydantic-2.9.2-py3-none-any.whl (434 kB)
+Collecting pydantic-core==2.23.4
+  Downloading pydantic_core-2.23.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Collecting pydispatcher==2.0.7
+  Downloading PyDispatcher-2.0.7-py3-none-any.whl (12 kB)
+Collecting pygments==2.18.0
+  Downloading pygments-2.18.0-py3-none-any.whl (1.2 MB)
+Collecting pyinotify==0.9.6
+  Downloading pyinotify-0.9.6.tar.gz (60 kB)
+Collecting pyjwt[crypto]==2.10.0
+  Downloading PyJWT-2.10.0-py3-none-any.whl (23 kB)
+Collecting pymongo==4.10.1
+  Downloading pymongo-4.10.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.9 MB)
+Collecting pyoembed==0.1.2
+  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /packages/32/11/7b9549660ae130668cabc886e4012572745508d381cd0005239b082129a8/pyoembed-0.1.2.tar.gz
+  Downloading pyoembed-0.1.2.tar.gz (12 kB)
+Collecting pyopenssl==24.2.1
+  Downloading pyOpenSSL-24.2.1-py3-none-any.whl (58 kB)
+Collecting pyparsing==3.2.0
+  Downloading pyparsing-3.2.0-py3-none-any.whl (106 kB)
+Collecting pypng==0.20220715.0
+  Downloading pypng-0.20220715.0-py3-none-any.whl (58 kB)
+Collecting pyre-check==0.9.23
+  Downloading pyre_check-0.9.23-py3-none-manylinux1_x86_64.whl (47.9 MB)
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /simple/pyre-extensions/
+Collecting pyre-extensions==0.0.31
+  Downloading pyre_extensions-0.0.31-py3-none-any.whl (12 kB)
+Collecting python-binary-memcached==0.31.3
+  Downloading python_binary_memcached-0.31.3-py3-none-any.whl (17 kB)
+Collecting python-dateutil==2.9.0.post0
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting python-debian==0.1.49
+  Downloading python_debian-0.1.49-py3-none-any.whl (132 kB)
+Collecting python-digitalocean==1.17.0
+  Downloading python_digitalocean-1.17.0-py3-none-any.whl (40 kB)
+Collecting python-ldap==3.4.4
+  Downloading python-ldap-3.4.4.tar.gz (377 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+    Preparing wheel metadata: started
+    Preparing wheel metadata: finished with status 'done'
+Collecting python-magic==0.4.27
+  Downloading python_magic-0.4.27-py2.py3-none-any.whl (13 kB)
+Collecting python-twitter==3.5
+  Downloading python_twitter-3.5-py2.py3-none-any.whl (67 kB)
+Collecting python3-openid==3.2.0
+  Downloading python3_openid-3.2.0-py3-none-any.whl (133 kB)
+Collecting python3-saml==1.16.0
+  Downloading python3_saml-1.16.0-py3-none-any.whl (76 kB)
+Collecting pyuca==1.2
+  Downloading pyuca-1.2-py2.py3-none-any.whl (1.5 MB)
+Collecting pyvips==2.2.3
+  Downloading pyvips-2.2.3.tar.gz (56 kB)
+Collecting pyyaml==6.0.2
+  Downloading PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (767 kB)
+Collecting qrcode==7.4.2
+  Downloading qrcode-7.4.2-py3-none-any.whl (46 kB)
+Collecting queuelib==1.7.0
+  Downloading queuelib-1.7.0-py2.py3-none-any.whl (13 kB)
+Collecting redis==5.2.0
+  Downloading redis-5.2.0-py3-none-any.whl (261 kB)
+Collecting referencing==0.35.1
+  Downloading referencing-0.35.1-py3-none-any.whl (26 kB)
+Collecting regex==2024.11.6
+  Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+Collecting requests[security]==2.32.3
+  Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+Collecting requests-file==2.1.0
+  Downloading requests_file-2.1.0-py2.py3-none-any.whl (4.2 kB)
+Collecting requests-oauthlib==2.0.0
+  Downloading requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Collecting responses==0.25.3
+  Downloading responses-0.25.3-py3-none-any.whl (55 kB)
+Collecting rfc3339-validator==0.1.4
+  Downloading rfc3339_validator-0.1.4-py2.py3-none-any.whl (3.5 kB)
+Collecting rich==13.9.4
+  Downloading rich-13.9.4-py3-none-any.whl (242 kB)
+Collecting rpds-py==0.21.0
+  Downloading rpds_py-0.21.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (364 kB)
+Collecting rsa==4.9
+  Downloading rsa-4.9-py3-none-any.whl (34 kB)
+Collecting ruamel.yaml==0.17.40
+  Downloading ruamel.yaml-0.17.40-py3-none-any.whl (113 kB)
+Collecting ruamel.yaml.clib==0.2.12
+  Downloading ruamel.yaml.clib-0.2.12-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (754 kB)
+Collecting ruff==0.7.4
+  Downloading ruff-0.7.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.1 MB)
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))': /simple/s3transfer/
+Collecting s3transfer==0.10.3
+  Downloading s3transfer-0.10.3-py3-none-any.whl (82 kB)
+Collecting scim2-filter-parser==0.7.0
+  Downloading scim2_filter_parser-0.7.0-py3-none-any.whl (23 kB)
+Collecting scrapy==2.12.0
+  Downloading Scrapy-2.12.0-py2.py3-none-any.whl (311 kB)
+Collecting semgrep==1.79.0
+  Downloading semgrep-1.79.0-cp38.cp39.cp310.cp311.py37.py38.py39.py310.py311-none-any.whl (27.8 MB)
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 438, in _error_catcher
+    yield
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 519, in read
+    data = self._fp.read(amt) if not fp_closed else b""
+           ^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/cachecontrol/filewrapper.py", line 62, in read
+    data = self.__fp.read(amt)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/cli/base_command.py", line 223, in _main
+    status = self.run(options, args)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/cli/req_command.py", line 180, in wrapper
+    return func(self, options, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/commands/install.py", line 320, in run
+    requirement_set = resolver.resolve(
+                      ^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/resolution/legacy/resolver.py", line 180, in resolve
+    discovered_reqs.extend(self._resolve_one(requirement_set, req))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/resolution/legacy/resolver.py", line 385, in _resolve_one
+    dist = self._get_dist_for(req_to_install)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/resolution/legacy/resolver.py", line 337, in _get_dist_for
+    dist = self.preparer.prepare_linked_requirement(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 480, in prepare_linked_requirement
+    return self._prepare_linked_requirement(req, parallel_builds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 503, in _prepare_linked_requirement
+    local_file = unpack_url(
+                 ^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 253, in unpack_url
+    file = get_http_url(
+           ^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 130, in get_http_url
+    from_path, content_type = download(link, temp_dir.path)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/network/download.py", line 164, in __call__
+    for chunk in chunks:
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/cli/progress_bars.py", line 168, in iter
+    for x in it:
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_internal/network/utils.py", line 64, in response_chunks
+    for chunk in response.raw.stream(
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 576, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 512, in read
+    with self._error_catcher():
+  File "/usr/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/lib/python3.12/site-packages/pip/_vendor/urllib3/response.py", line 443, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.")
+pip._vendor.urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out.
+WARNING: You are using pip version 20.3.4; however, version 24.3.1 is available.
+You should consider upgrading via the '/srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/bin/python -m pip install --upgrade pip' command.
+
+[0;37;41mSubcommand of ./lib/provision.py failed with exit status 2: /srv/zulip-venv-cache/60be0c7e2d943e3377ba88c753dd97d3adc512be/zulip-py3-venv/bin/pip install --use-deprecated=legacy-resolver --no-deps --require-hashes -r /mnt/e/zulip/requirements/dev.txt[0m
+[0;37;41mActual error output for the subcommand is just above this.[0m
+
+[91m
+Provisioning failed (exit code 1)!
+
+* Look at the traceback(s) above to find more about the errors.
+* Resolve the errors or get help on chat.
+* If you can fix this yourself, you can re-run tools/provision at any time.
+* Logs are here: zulip/var/log/provision.log
+[0m
